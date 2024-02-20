@@ -1,10 +1,10 @@
 import cmd
 
 class GameLoop(cmd.Cmd):
-    intro = "=== Pig Dice Game ==="    
+    intro = "=== Pig Dice Game ==="   
     prompt = "--> "
     
-    def do_quit(self, arg):
+    def do_quit(self, line):
         """Quits the program"""
         return True
     
@@ -17,7 +17,6 @@ class GameLoop(cmd.Cmd):
         print("This is the menu of the game\nYou can choose to show the menu at any time")
 
 # Start the game loop
-GameLoop().cmdloop()
 
 if __name__ == '__main__':
     GameLoop().cmdloop()
