@@ -16,3 +16,12 @@ class TestHighscoreClass(unittest.TestCase):
                              "Galileo": 3,
                              "Aristoteles": 15
                          })
+    
+    def test_get_highscore(self):
+        """Tests the get_highscore method"""
+        self.highscore.add_highscore("Galileo", 3)
+        self.highscore.add_highscore("Aristoteles", 15)
+        highscores = self.highscore.get_highscore()
+        self.assertEqual(
+            highscores, {"Galileo ": 3, "Aristoteles ": 15}
+        )
