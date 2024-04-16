@@ -22,7 +22,12 @@ class TestDiceClass(unittest.TestCase):
         """Checks that the highest number on the die is 6"""
         myDice = Dice()
         expected_high = 6
-        self.assertEqual(expected_high, myDice.high)
+        self.assertEqual(expected_high, myDice.high)        
+
+    def test_return(self):
+        myDice = Dice()
+        number = myDice.roll_dice()
+        self.assertIsNotNone(number)
 
 if __name__ == "__main__":
     unittest.main()
