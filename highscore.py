@@ -9,7 +9,7 @@ class Highscore:
 
     def add_highscore(self, name, highscore):
         """Save a highscore"""
-        self.highscore_list[name] += highscore
+        self.highscore_list[name] = highscore
         with open("highscore.txt", "a") as file:
             for player_name, score in self.highscore_list.items():
                 file.write(f"{player_name} - {score}\n")
