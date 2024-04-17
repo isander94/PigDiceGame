@@ -6,7 +6,7 @@ class Player:
         """Creates player class, user needs to input their name"""
         self.name = name
         self.score = 0
-        self.dice = Dice()
+        self.dice = Dice(1, 6)
 
     def change_name(self, new_name):
         """Allows the user to change their name"""
