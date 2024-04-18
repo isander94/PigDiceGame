@@ -3,7 +3,8 @@ import dice
 import player
 from game import Game
 import computer
-import PvC
+from PvC import PlayerVsComputer
+from game_new import Game_new
 
 class GameLoop(cmd.Cmd):
     intro = "=== Pig Dice Game ===\n1] Player VS Computer - pvc\n2] Player VS Player - pvp\n3] High score\n4]\n5]"
@@ -21,25 +22,31 @@ class GameLoop(cmd.Cmd):
 
     def do_pvc(self, arg):
         """Selects the game mode to play against the computer"""
-        name = input("Enter name for player: ")
+        
+        '''name = input("Enter name for player: ")
         player1 = player.Player(name)
         print("choose what difficulty \n1] Normal\n2] Hard\n3] Extreme (you won't win)\n")
         difficulty = int(input("--> "))
-        computer1 = computer.Computer(1, (6*difficulty))
-        pvc_game = PvC(player1, computer1)
+        diff = difficulty * 6
+        computer1 = computer.Computer(1, diff)
+        pvc_game = PlayerVsComputer(player1, computer1)
+        pvc_game.start()'''
+        Game_new().Player_Computer()
 
 
 
 
     def do_pvp(self, arg):
         """Selects the game mode for two players"""
-        print("Starting a player versus player game!")
+        '''print("Starting a player versus player game!")
         name = input("Enter name of player 1: ")
         player1 = player.Player(name)
         name = input("Enter name of player 2: ")
         player2 = player.Player(name)
         pvp_game = Game(player1, player2)
-        pvp_game.start()
+        pvp_game.start()'''
+
+        Game_new().Player_v_Player()
 
     def do_highscore(self, arg):
         """Show the high score of previous games by players"""
