@@ -3,8 +3,6 @@ import dice
 import player
 from game import Game
 import computer
-from PvC import PlayerVsComputer
-from game_new import Game_new
 
 class GameLoop(cmd.Cmd):
     intro = "=== Pig Dice Game ===\n1] Player VS Computer - pvc\n2] Player VS Player - pvp\n3] High score\n4]\n5]"
@@ -31,7 +29,7 @@ class GameLoop(cmd.Cmd):
         computer1 = computer.Computer(1, diff)
         pvc_game = PlayerVsComputer(player1, computer1)
         pvc_game.start()'''
-        Game_new().Player_Computer()
+        Game().Player_Computer()
 
 
 
@@ -46,7 +44,7 @@ class GameLoop(cmd.Cmd):
         pvp_game = Game(player1, player2)
         pvp_game.start()'''
 
-        Game_new().Player_v_Player()
+        Game().Player_v_Player()
 
     def do_highscore(self, arg):
         """Show the high score of previous games by players"""
