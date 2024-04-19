@@ -1,7 +1,4 @@
-import dice
 import player
-import cmd
-import random
 import computer
 import highscore
 
@@ -26,6 +23,7 @@ class Game():
             if player1.get_score() >= 20:
                 print(f"{player1.get_name()} wins with a score of {player1.get_score()}!")
                 print("Game ended!")
+                self.highscore.add_highscore(player1.get_name(), player1.get_score())
                 break
 
             print(f"\n--- Computer's turn ---")
@@ -55,6 +53,7 @@ class Game():
             if player1.get_score() >= 20:
                 print(f"{player1.get_name()} wins with a score of {player1.get_score()}!")
                 print("Game ended!")
+                self.highscore.add_highscore(player1.get_name(), player1.get_score())
                 break
 
             print(f"\n--- {player2.get_name()}'s turn ---")
@@ -63,7 +62,7 @@ class Game():
             if player2.get_score() >= 20:
                 print(f"{player2.get_name()} wins with a score of {player2.get_score()}!")
                 print("Game ended!")
-                self.highscore.add_highscore(player2.get_name(), player2.get_score)
+                self.highscore.add_highscore(player2.get_name(), player2.get_score())
                 break
 
 
