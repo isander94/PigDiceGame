@@ -6,7 +6,7 @@ import computer
 import PvC
 
 class GameLoop(cmd.Cmd):
-    intro = "=== Pig Dice Game ===\n1] Player VS Computer - pvc\n2] Player VS Player - pvp\n3] High score\n4]\n5]"
+    intro = "=== Pig Dice Game ===\nPlayer VS Computer - pvc\nPlayer VS Player - pvp\nHigh score\nQuit"
     prompt = "--> "
     
     def do_quit(self, line):
@@ -17,18 +17,16 @@ class GameLoop(cmd.Cmd):
     def do_menu(self, arg):
         """Shows game menu"""
 
-        print("\n1] Player VS Computer - PVC\n2] Player VS Player - PVP\n3] High score\n4]\n5]")
+        print("\nPlayer VS Computer - PVC\nPlayer VS Player - PVP\nHigh score\nQuit")
 
     def do_pvc(self, arg):
         """Selects the game mode to play against the computer"""
         name = input("Enter name for player: ")
         player1 = player.Player(name)
-        print("choose what difficulty \n1] Normal\n2] Hard\n3] Extreme (you won't win)\n")
+        print("choose what difficulty \nNormal\nHard\nExtreme (you won't win)")
         difficulty = int(input("--> "))
         computer1 = computer.Computer(1, (6*difficulty))
         pvc_game = PvC(player1, computer1)
-
-
 
 
     def do_pvp(self, arg):
@@ -44,12 +42,7 @@ class GameLoop(cmd.Cmd):
     def do_highscore(self, arg):
         """Show the high score of previous games by players"""
         pass
-    def do_startgame(self, arg):
-        pass
 
-
-
-# Start the game loop
 
 if __name__ == '__main__':
     GameLoop().cmdloop()
