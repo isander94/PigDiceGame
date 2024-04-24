@@ -13,7 +13,17 @@ class Game():
         player1 = player.Player(name)
 
         print(f"Welcome {player1.get_name()}! Choose difficulty for the computer\n")
-        diff = int(input(f"(1) Normal\n(2) Hard\n(3) Extreme (you wont win)\n---> "))
+        
+        input_error = True
+        while(input_error):
+            try:
+                diff = int(input(f"(1) Normal\n(2) Hard\n(3) Extreme (you wont win)\n---> "))
+            except(ValueError):
+                print("Invalid input - Try again!")
+            else:
+                input_error = False
+
+
         computer1 = computer.Computer(1, (6 * diff))
 
         while self.playing:
