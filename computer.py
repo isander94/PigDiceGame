@@ -22,7 +22,7 @@ class Computer:
         if roll == 1:
             return 0
         else:
-            print("Computer rolled a " + roll)
+            print(f"Computer rolled a {roll}")
             self.score += roll
 
         if self.get_score() < 10 or random.randint(0,1) == 1:
