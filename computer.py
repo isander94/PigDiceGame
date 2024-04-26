@@ -30,6 +30,9 @@ class Computer:
                 else:
                     round_score += roll
                     print(f"Computer rolled a {roll} and now has {self.get_score() + round_score}")
+                if self.get_score() + round_score >= 20:
+                    self.add_score(round_score)
+                    break
                     
             else:
                 self.add_score(round_score)
