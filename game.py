@@ -15,9 +15,17 @@ class Game():
         print(f"Welcome {player1.get_name()}! Choose difficulty for the computer\n")
         
         input_error = True
+        out_of_bounds = True
         while(input_error):
             try:
-                diff = int(input(f"(1) Normal\n(2) Hard\n(3) Extreme (you wont win)\n---> "))
+                # Check if the input is out of bounds - There are only three difficulty settings
+                while(out_of_bounds):
+                    diff = int(input(f"(1) Normal\n(2) Hard\n(3) Extreme (you wont win)\n---> "))
+                    if(diff < 1 or diff > 3):
+                        print("Invalid input - Try again!")
+                        out_of_bounds = True
+                    else:
+                        out_of_bounds = False
             except(ValueError):
                 print("Invalid input - Try again!")
             else:
