@@ -17,7 +17,7 @@ class Computer:
         round_score = 0
         while True:
             if round_score < 10 or random.randint(0, 1) == 1:
-                print("Computer wants to roll again")
+                print("Computer wants to roll")
                 roll = self.dice.roll_dice()
                 if roll == 1:
                     print("computer rolled a 1 and loses all their points this round")
