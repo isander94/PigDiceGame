@@ -100,3 +100,7 @@ class Game():
                 print(f"{player0.get_name()} has secured {player0.get_score()} points!")
                 round_score = 0
                 break
+
+            elif choice.lower() == "changename":
+                new_name = input("Enter new name:\n--> ")
+                player0.name = new_name
