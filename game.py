@@ -36,12 +36,14 @@ class Game():
 
         while self.playing:
             print(f"\n--- {player1.get_name()}'s turn ---")
-            self.player_move(player1)
+            quit = self.player_move(player1)
 
             if player1.get_score() >= 20:
                 print(f"{player1.get_name()} wins with a score of {player1.get_score()}!")
                 print("Game ended!")
                 self.highscore.add_highscore(player1.get_name(), player1.get_score())
+                break
+            elif quit == 0:
                 break
 
             print(f"\n--- Computer's turn ---")
@@ -66,21 +68,26 @@ class Game():
 
         while self.playing:
             print(f"\n--- {player1.get_name()}'s turn ---")
-            self.player_move(player1)
+            quit = self.player_move(player1)
 
             if player1.get_score() >= 20:
                 print(f"{player1.get_name()} wins with a score of {player1.get_score()}!")
                 print("Game ended!")
                 self.highscore.add_highscore(player1.get_name(), player1.get_score())
                 break
+            elif quit == 0:
+                break
 
             print(f"\n--- {player2.get_name()}'s turn ---")
-            self.player_move(player2)
+            quit = self.player_move(player2)
 
             if player2.get_score() >= 20:
                 print(f"{player2.get_name()} wins with a score of {player2.get_score()}!")
                 print("Game ended!")
                 self.highscore.add_highscore(player2.get_name(), player2.get_score())
+                break
+
+            elif quit == 0:
                 break
 
 
@@ -112,3 +119,6 @@ class Game():
             elif choice.lower() == "changename":
                 new_name = input("Enter new name:\n--> ")
                 player0.name = new_name
+
+            elif choice.lower() == "quit":
+                return 0
