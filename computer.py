@@ -30,5 +30,5 @@ class Computer:
             roll = self.dice.roll_dice()
         else:
             self.add_score(self.score)
-            print(f"computer stays with {self.get_score}")
+            print("computer stays with " + self.get_score)
             return 0
