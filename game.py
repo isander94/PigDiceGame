@@ -2,6 +2,7 @@ import player
 import computer
 import highscore
 
+
 class Game():
     def __init__(self):
         self.playing = True
@@ -13,24 +14,23 @@ class Game():
         player1 = player.Player(name)
 
         print(f"Welcome {player1.get_name()}! Choose difficulty for the computer\n")
-        
+
         input_error = True
         out_of_bounds = True
-        while(input_error):
+        while (input_error):
             try:
                 # Check if the input is out of bounds - There are only three difficulty settings
-                while(out_of_bounds):
+                while (out_of_bounds):
                     diff = int(input(f"(1) Normal\n(2) Hard\n(3) Extreme (you wont win)\n---> "))
-                    if(diff < 1 or diff > 3):
+                    if (diff < 1 or diff > 3):
                         print("Invalid input - Try again!")
                         out_of_bounds = True
                     else:
                         out_of_bounds = False
-            except(ValueError):
+            except (ValueError):
                 print("Invalid input - Try again!")
             else:
                 input_error = False
-
 
         computer1 = computer.Computer(1, (6 * diff))
 
@@ -89,7 +89,6 @@ class Game():
 
             elif quit == 0:
                 break
-
 
     def player_move(self, player0):
         round_score = 0
