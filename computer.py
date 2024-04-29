@@ -1,17 +1,21 @@
 from dice import Dice
 import random
+
+
 class Computer:
     def __init__(self, diceLow, diceHigh):
         """Initializing the computer with different difficulty depending on dice"""
         self.score = 0
         self.dice = Dice(diceLow, diceHigh)
+
     def get_score(self):
         """Gets the computers score"""
         return self.score
-    
+
     def add_score(self, score):
         """adds on to the computers score"""
         self.score += score
+
     def stay_or_roll(self):
         """The computer moves"""
         round_score = 0
