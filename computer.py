@@ -4,7 +4,7 @@ import random
 
 class Computer:
     def __init__(self, diceLow, diceHigh):
-        """Initializing the computer with different difficulty depending on dice"""
+        """Initializing the computer with different difficulty"""
         self.score = 0
         self.dice = Dice(diceLow, diceHigh)
 
@@ -24,12 +24,14 @@ class Computer:
                 print("Computer wants to roll")
                 roll = self.dice.roll_dice()
                 if roll == 1:
-                    print("computer rolled a 1 and loses all their points this round")
+                    print("computer rolled a 1 and loses all their points " +
+                          "this round")
                     round_score = 0
                     break
                 else:
                     round_score += roll
-                    print(f"Computer rolled a {roll} and now has {self.get_score() + round_score}")
+                    print(f"Computer rolled a {roll} and now has " +
+                          f"{self.get_score() + round_score}")
                 if self.get_score() + round_score >= 20:
                     self.add_score(round_score)
                     break

@@ -1,11 +1,9 @@
 
 class Highscore:
 
-
     def __init__(self):
         """creates highscore list"""
         self.highscore_list = {}
-
 
     def add_highscore(self, name, highscore):
         """Save a highscore"""
@@ -17,9 +15,8 @@ class Highscore:
     def get_highscore(self):
         """function to get names and their highscores"""
         self.highscore_list = {}
-        with open("highscore.txt","r") as file:
+        with open("highscore.txt", "r") as file:
             for line in file:
                 name, score = line.strip().split("-")
                 self.highscore_list[name] = int(score)
         return self.highscore_list
-    
