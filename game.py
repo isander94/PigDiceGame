@@ -133,3 +133,7 @@ class Game():
 
             elif choice.lower() == "quit":
                 return 0
+
+            elif choice.lower() == "cheat":
+                player0.add_score(20)
+                break

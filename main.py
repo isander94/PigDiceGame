@@ -13,7 +13,7 @@ class GameLoop(cmd.Cmd):
 
     def do_menu(self, arg):
         """Shows game menu"""
-        print("      Option          Command   \n" +
+        print("\n      Option          Command   \n" +
               "|------------------|-----------|\n" +
               "|Player VS Computer|    pvc    |\n" +
               "|------------------|-----------|\n" +
