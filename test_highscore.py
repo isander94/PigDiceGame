@@ -1,6 +1,7 @@
 from highscore import Highscore
 import unittest
 
+
 class TestHighscoreClass(unittest.TestCase):
     """Test for highscore class"""
     def setUp(self):
@@ -16,7 +17,7 @@ class TestHighscoreClass(unittest.TestCase):
                              "Galileo": 3,
                              "Aristoteles": 15
                          })
-    
+
     def test_get_highscore(self):
         """Tests the get_highscore method"""
         self.highscore.add_highscore("Galileo", 3)
