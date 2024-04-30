@@ -6,7 +6,7 @@ import computer
 import highscore
 
 class GameLoop(cmd.Cmd):
-    intro = "=== Pig Dice Game ===\nPlayer VS Computer - pvc\nPlayer VS Player - pvp\nHigh score\nQuit program - quit"
+    intro = "==== Pig Dice Game ====\nPlayer VS Computer - pvc\nPlayer VS Player - pvp\nHigh score\nQuit program - quit"
     prompt = "--> "
     
     def do_quit(self, line):
@@ -15,7 +15,7 @@ class GameLoop(cmd.Cmd):
     
     def do_menu(self, arg):
         """Shows game menu"""
-        print("\nPlayer VS Computer - pvc\nPlayer VS Player - pvp\nHigh score\nQuit program - quit]")
+        print("\nPlayer VS Computer - pvc\nPlayer VS Player - pvp\nHigh score\nQuit program - quit")
 
     def do_pvc(self, arg):
         """Selects the game mode to play against the computer"""
