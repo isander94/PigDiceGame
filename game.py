@@ -115,7 +115,7 @@ class Game():
                 else:
                     round_score += roll
                     print(f"{player0.get_name()} rolled a {roll} and now has" +
-                          f"{player0.get_score() + round_score} points!")
+                          f" {player0.get_score() + round_score} points!")
                 if player0.get_score() + round_score >= 20:
                     player0.add_score(round_score)
                     break
