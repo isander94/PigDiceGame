@@ -9,6 +9,6 @@ class Dice:
         self.high = high
 
     def roll_dice(self):
-        """Rolls the dice for a number between 1 and 6"""
+        """Rolls the dice for a number between lowest and highest given num"""
         random_num = random.randint(self.low, self.high)
         return random_num
