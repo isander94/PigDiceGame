@@ -22,7 +22,6 @@ class GameLoop(cmd.Cmd):
         Game().Player_Computer()
         self.do_menu(arg)
 
-
     def do_pvp(self, arg):
         """Selectes gamemode Player vs Player"""
         Game().Player_v_Player()
@@ -31,7 +30,7 @@ class GameLoop(cmd.Cmd):
     def do_highscore(self, arg):
         """Show the high score of previous games by players"""
         high = highscore.Highscore()
-        print(high.get_highscore())
+        high.show_highscore()
         self.do_menu(arg)
 
 
