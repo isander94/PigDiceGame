@@ -73,31 +73,12 @@ class Game():
 
         while self.playing:
             print(f"\n--- {player1.get_name()}'s turn ---")
-            quit = self.player_move(player1)
-
-            if player1.get_score() >= 20:
-                print(f"{player1.get_name()} wins with a score of " +
-                      f"{player1.get_score()}!")
-                print("Game ended!")
-                self.highscore.add_highscore(
-                    player1.get_name(), player1.get_score())
-                break
-            elif quit == 0:
-                break
+            self.player_move(player1)
+            self.check_if_win(player1.get_score(), player1)
 
             print(f"\n--- {player2.get_name()}'s turn ---")
-            quit = self.player_move(player2)
-
-            if player2.get_score() >= 20:
-                print(f"{player2.get_name()} wins with a score of " +
-                      f"{player2.get_score()}!")
-                print("Game ended!")
-                self.highscore.add_highscore(
-                    player2.get_name(), player2.get_score())
-                break
-
-            elif quit == 0:
-                break
+            self.player_move(player2)
+            self.check_if_win(player2.get_score(), player2)
 
     def player_move(self, player0):
         round_score = 0
@@ -132,8 +113,15 @@ class Game():
                 player0.name = new_name
 
             elif choice.lower() == "quit":
-                return 0
+                self.playing = False
+                return self.playing
 
             elif choice.lower() == "cheat":
                 player0.add_score(20)
                 break
+
+    def check_if_win(self, score, player):
+        if score >= 20:
+            print(f"{player.get_name()} Wins with a score of {score}")
+            self.playing = False
+            return self.playing
