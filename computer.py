@@ -16,10 +16,11 @@ class Computer:
         """adds on to the computers score"""
         self.score += score
 
-    def stay_or_roll(self):
+    def stay_or_roll(self, playing):
         """The computer moves"""
         round_score = 0
-        while True:
+        while playing:
+            print("\n--- Computer's turn ---")
             if round_score < 10 or random.randint(0, 1) == 1:
                 print("Computer wants to roll")
                 roll = self.dice.roll_dice()
