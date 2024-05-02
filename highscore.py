@@ -9,7 +9,7 @@ class Highscore:
     def add_highscore(self, name, highscore):
         """Function that saves a players name and score after a victory"""
         with open("highscore.txt", "a", encoding="utf-8") as file:
-            file.write(f"{name} - {highscore}")
+            file.write(f"{name} - {highscore}\n")
 
     def show_highscore(self):
         """Function to print names and their highscores"""
