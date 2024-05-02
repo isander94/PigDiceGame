@@ -1,9 +1,11 @@
+"""Main class for handling gameloop"""
 import cmd
 from game import Game
 import highscore
 
 
 class GameLoop(cmd.Cmd):
+    """Main Gameloop"""
     intro = "=== Pig Dice Game ===\nType 'help' to show commands"
     prompt = "--> "
 
@@ -28,12 +30,12 @@ class GameLoop(cmd.Cmd):
 
     def do_pvc(self, arg):
         """Selects the game mode to play against the computer"""
-        Game().Player_Computer()
+        Game().player_computer()
         self.do_menu(arg)
 
     def do_pvp(self, arg):
         """Selectes gamemode Player vs Player"""
-        Game().Player_v_Player()
+        Game().player_v_player()
         self.do_menu(arg)
 
     def do_highscore(self, arg):

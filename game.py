@@ -1,14 +1,17 @@
+"""Class for handling all gamemodes and its functions"""
 import player
 import computer
 import highscore
 
 
 class Game():
+    """Game class for all gamemodes"""
     def __init__(self):
         self.playing = True
         self.highscore = highscore.Highscore()
 
-    def Player_Computer(self):
+    def player_computer(self):
+        """Game between player and computer"""
         print("Welcome to Player vs Computer\n")
         name = input("Please enter your name: ")
         player1 = player.Player(name)
@@ -18,10 +21,10 @@ class Game():
 
         input_error = True
         out_of_bounds = True
-        while (input_error):
+        while input_error:
             try:
                 # Check if the input is out of bounds
-                while (out_of_bounds):
+                while out_of_bounds:
                     diff = int(input("(1) Normal\n(2) Hard\n(3) Extreme " +
                                      "(you wont win)\n---> "))
                     if (diff < 1 or diff > 3):
@@ -29,7 +32,7 @@ class Game():
                         out_of_bounds = True
                     else:
                         out_of_bounds = False
-            except (ValueError):
+            except ValueError:
                 print("Invalid input - Try again!")
             else:
                 input_error = False
@@ -48,7 +51,7 @@ class Game():
                 print("Game ended!")
                 break
 
-    def Player_v_Player(self):
+    def player_v_player(self):
         """Method for two players playing against eachother"""
         print("Welcome to Player vs Player!\n")
 
@@ -68,6 +71,7 @@ class Game():
             self.check_if_win(player2.get_score(), player2.get_name())
 
     def player_move(self, player0):
+        """Function for when the player moves"""
         round_score = 0
         while self.playing:
             print(f"\n--- {player0.get_name()}'s turn ---")
@@ -109,12 +113,13 @@ class Game():
                 player0.add_score(20)
                 break
 
-    def check_if_win(self, score, player):
+    def check_if_win(self, score, player_name):
+        """Checks if the player has won"""
         if score >= 20:
-            print(f"{player} Wins with a score of {score}")
+            print(f"{player_name} Wins with a score of {score}")
             print("Game ended!")
             self.highscore.add_highscore(
                 player, score
             )
             self.playing = False
-            return self.playing
+        return self.playing
