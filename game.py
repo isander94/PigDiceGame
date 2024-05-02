@@ -119,7 +119,7 @@ class Game():
             print(f"{player_name} Wins with a score of {score}")
             print("Game ended!")
             self.highscore.add_highscore(
-                player, score
+                player_name, score
             )
             self.playing = False
         return self.playing
