@@ -1,12 +1,14 @@
-from dice import Dice
+"""Class that represents a computer"""
+
 import random
+from dice import Dice
 
 
 class Computer:
-    def __init__(self, diceLow, diceHigh):
-        """Initializing the computer with different difficulty"""
+    """Initializing the computer with different difficulty"""
+    def __init__(self, dice_low, dice_high):
         self.score = 0
-        self.dice = Dice(diceLow, diceHigh)
+        self.dice = Dice(dice_low, dice_high)
 
     def get_score(self):
         """Gets the computers score"""

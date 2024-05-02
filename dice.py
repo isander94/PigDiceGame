@@ -1,10 +1,11 @@
-import random
+
 """Class representing a die that the player and computer can roll"""
+import random
 
 
 class Dice:
+    """Creates a dice class with lowest and highest number"""
     def __init__(self, low, high):
-        """Creates a dice class with lowest and highest number"""
         self.low = low
         self.high = high
 

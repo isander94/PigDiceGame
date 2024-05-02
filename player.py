@@ -1,10 +1,10 @@
-
+"""Player class that represents a player"""
 from dice import Dice
 
 
 class Player:
+    """Creates player class, user needs to input their name"""
     def __init__(self, name):
-        """Creates player class, user needs to input their name"""
         self.name = name
         self.score = 0
         self.dice = Dice(1, 6)
