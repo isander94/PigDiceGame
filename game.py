@@ -70,13 +70,13 @@ class Game():
             self.player_move(player2)
             self.check_if_win(player2.get_score(), player2.get_name())
 
-    def player_move(self, player0):
+    def player_move(self, player0, get_input=input):
         """Function for when the player moves"""
         round_score = 0
         while self.playing:
             print(f"\n--- {player0.get_name()}'s turn ---")
 
-            choice = input("Roll or Hold?\n--> ")
+            choice = get_input("Roll or Hold?\n--> ")
 
             if choice.lower() == "roll":
                 roll = player0.roll_dice()
@@ -98,7 +98,7 @@ class Game():
                 print(f"{player0.get_name()} has secured " +
                       f"{player0.get_score()} points!")
                 round_score = 0
-                break
+                return True
 
             elif choice.lower() == "changename":
                 new_name = input("Enter new name:\n--> ")
@@ -123,3 +123,7 @@ class Game():
             )
             self.playing = False
         return self.playing
+
+    def get_input(self, text):
+        """Method for input, makes it easier to test"""
+        return input(text)
