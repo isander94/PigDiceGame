@@ -1,0 +1,12 @@
+# Code style
+black
+
+# Code analysis
+flake8
+# Flake8-cohesion
+pylint
+flake8-docstrings
+flake8-polyfill
+
+# Unit test and coverage
+coverage
