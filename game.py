@@ -38,6 +38,7 @@ class Game():
                 input_error = False
 
         computer1 = computer.Computer(1, (6 * diff))
+        self.show_commands()
 
         while self.playing:
             self.player_move(player1)
@@ -62,6 +63,7 @@ class Game():
         player2 = player.Player(name2)
 
         print(f"Welcome {player1.get_name()} and {player2.get_name()}")
+        self.show_commands()
 
         while self.playing:
             self.player_move(player1)
@@ -127,3 +129,14 @@ class Game():
     def get_input(self, text):
         """Method for input, makes it easier to test"""
         return input(text)
+
+    def show_commands(self):
+        """shows command list for the game"""
+        print("  Commands \n" +
+              " ---------- \n" +
+              "|   roll   |\n" +
+              "|   hold   |\n" +
+              "|   quit   |\n" +
+              "|   cheat  |\n" +
+              "|changename|\n" +
+              " ---------- ")
