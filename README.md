@@ -16,3 +16,16 @@ We have made the intelligence in such a way that the computer always wants to ro
 There are also three different difficulties, which goes from Normal, Hard, Extreme. The higher difficulty you choose, the more values it gets on its die.
 So in normal mode, the computer gets a regular die that goes from 1-6. In hard mode it gets a die with numbers 1-12, and in extreme mode it gets a die with 1-18.
 The player always only has one single die.
+
+# Clone and install the project
+Clone the repository by typing this in your console in your directory of your choice
+---
+git clone https://github.com/isander94/PigDiceGame.git
+---
+
+## Create and activate venv
+
+create a venv by typing:
+---
+python -m venv .venv
+---
