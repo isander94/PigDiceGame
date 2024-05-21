@@ -112,7 +112,7 @@ class Game():
                 return self.playing
 
             elif choice.lower() == "cheat":
-                player0.add_score(20)
+                player0.add_score(100)
                 break
 
     def check_if_win(self, score, player_name):
