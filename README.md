@@ -19,13 +19,13 @@ The player always only has one single die.
 
 # Clone and install the project
 Clone the repository by typing this in your console in your directory of your choice
-<sub>
-git clone https://github.com/isander94/PigDiceGame.git
-</sub>
+
+    git clone https://github.com/isander94/PigDiceGame.git
+
 
 ## Create and activate venv
 
 create a venv by typing:
-<sub>
-python -m venv .venv
-</sub>
+
+    python -m venv .venv
+
