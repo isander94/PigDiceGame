@@ -46,7 +46,7 @@ class Game():
 
             computer1.stay_or_roll(self.playing)
 
-            if computer1.get_score() >= 20:
+            if computer1.get_score() >= 100:
                 print("The computer wins with a score of " +
                       f"{computer1.get_score()}!")
                 print("Game ended!")
@@ -91,7 +91,7 @@ class Game():
                     round_score += roll
                     print(f"{player0.get_name()} rolled a {roll} and now has" +
                           f" {player0.get_score() + round_score} points!\n")
-                if player0.get_score() + round_score >= 20:
+                if player0.get_score() + round_score >= 100:
                     player0.add_score(round_score)
                     break
 
@@ -117,7 +117,7 @@ class Game():
 
     def check_if_win(self, score, player_name):
         """Checks if the player has won"""
-        if score >= 20:
+        if score >= 100:
             print(f"{player_name} Wins with a score of {score}")
             print("Game ended!")
             self.highscore.add_highscore(
